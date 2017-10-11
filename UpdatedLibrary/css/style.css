@@ -1,0 +1,415 @@
+html, body{
+	width: 100%;
+    height: 100%;
+	color: #666;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container{
+    background-color: #F7F8F8;
+    min-height: 100%;
+}
+
+#dashboard-menu-header{
+	display: table;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	background-color: #FD5138;
+	height: 50px;
+	width: 100%;
+}
+
+#dashboard-menu-header h3{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.widget{
+    background-color: white;
+    width: 95%;
+    margin: 10px auto;
+    box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+}
+
+.widget > .header{
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+	background-color: #16707F;
+}
+
+.widget .section-header{
+	padding: 10px;
+	color: white;
+	background-color: #27CAE5;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+#header{
+	display: table;
+	height: 50px;
+	color: white;
+	background-color: #0A343B;
+	width: 100%;
+	padding-left: 10px;
+}
+
+#header h3{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+h3, h4{
+    margin: 0;
+}
+
+#dashboard-menu{
+    position: fixed;
+    width: 200px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #0A343B;
+}
+
+#dashboard-menu ul{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+#dashboard-menu li{
+		font-size: 13px;
+    color: white;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+#dashboard-menu li i{
+	width: 21px;
+}
+
+#dashboard-menu li > span{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#dashboard-menu .fa{
+	font-size: 18px;
+}
+
+#dashboard-menu li:hover{
+    background-color: #0C3F47;
+}
+
+#dashboard-menu li.active{
+    background-color: #061D21;
+}
+
+#dashboard-menu-list li{
+	text-transform: uppercase;
+}
+
+.arrow-left {
+	display: none !important;
+	position: absolute;
+	right: 0;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right:10px solid #F7F8F8;
+}
+
+.arrow-left.active{
+	display: inline-block !important;
+}
+
+#content{
+    margin-left: 200px;
+}
+
+table{
+	width: 100%;
+}
+
+/*
+ * Detailed Report Style
+ */
+
+.fa-check-circle{
+	color: #3AD629;
+}
+
+.fa-times-circle{
+	color: #D62929;
+}
+
+.scenario-detail.pure-table{
+	font-size: 13px;
+	border: none;
+}
+
+.scenario-detail.pure-table thead{
+	color: white;
+	background-color: #27CAE5;
+}
+
+.scenario-detail.pure-table tbody > tr{
+	border-bottom: 1px solid #eee;
+}
+
+.scenario-detail.pure-table td, .scenario-detail.pure-table th{
+    border-left: none;
+}
+
+.scenario-detail.pure-table .test-case td{
+    font-weight: bold;
+    background-color: rgba(0,0,0,0.05) !important;
+}
+
+.scenario-detail.pure-table .test-case{
+	border-bottom: none;
+}
+
+.stack-trace-container{
+ 	position: absolute;
+	background: #fff;
+	width: 600px;
+	height: 400px;
+	font-size: x-small;
+	font-weight: bold;
+	box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.3);
+	z-index: 1000;
+	cursor: auto;
+}
+
+.stack-trace-container .header{
+	margin: 0;
+	padding: 10px 10px;
+	height: 40px;
+	font-size: large;
+	background: #FD5138;
+	color: white;
+}
+
+.exception-message{
+	height: 40px;
+	font-size: 15px;
+	margin: 10px;
+	overflow: auto;
+}
+
+.stack-trace{
+	height: 290px;
+	margin: 0 10px 10px 10px;
+	overflow: auto;
+}
+
+.stack-trace pre{
+    overflow: visible;
+}
+
+.native-reports {
+	font-size: 13px;
+	padding: 10px;
+}
+
+.native-reports span {
+	font-weight: bold;
+}
+
+.native-reports a {
+	text-decoration: none;
+	color: white;
+	background-color: #DDA458;
+	padding: 3px;
+	border-radius: 4px;
+}
+
+/* ----- */
+
+/*
+*  Overview Report Styles
+*/
+
+#chart-container {
+/*    border-right: 1px solid #ccc;*/
+}
+
+#channel-chart-container{
+	height: 300px;
+}
+
+.legend-container{
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.legend-container > span{
+	padding: 0 10px;
+}
+
+.ct-chart{
+    padding: 10px;
+    height: 225px;
+}
+
+.ct-label{
+    fill: #fff;
+}
+
+.fa.fa-circle.passed{
+    color: #D2DA29;
+}
+
+.fa.fa-circle.failed{
+    color: #F92943;
+}
+
+.fa.fa-circle.skipped{
+    color: #01B5F0;
+}
+
+.ct-series-a .ct-slice-pie{
+	fill: #D2DA29;
+}
+
+.ct-series-b .ct-slice-pie{
+	fill: #F92943;
+}
+.ct-series-c .ct-slice-pie{
+	fill: #01B5F0
+}
+
+.ct-series-a .ct-bar{
+	stroke: #D2DA29;
+}
+
+.ct-series-b .ct-bar{
+	stroke: #F92943;
+}
+.ct-series-c .ct-bar{
+	stroke: #01B5F0
+}
+
+.scenarios.pure-table{
+    font-size: 13px;
+    border: none;
+}
+
+.scenarios.pure-table thead{
+    color: white;
+	background-color: #27CAE5;
+}
+
+.scenarios.pure-table td, .scenarios.pure-table th{
+    border-left: none;
+}
+
+.scenarios.pure-table tbody > tr{
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.scenarios.pure-table tbody > tr:hover{
+    background-color: cornsilk;
+}
+
+.scenarios.pure-table tbody > tr.active{
+    background-color: #FFFBEB;
+}
+
+.scenario-metrics-cell{
+    text-align: center;
+}
+
+/* ----- */
+
+/* ---- Screen Shot Style --- */
+.screenshot-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	display: none;
+}
+
+.screenshot-container.visible {
+	display: table;
+}
+
+.screenshot-inner-container {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.screenshot-image-container {
+	position: relative;
+	display: inline-block;
+	width: 600px;
+	height: 400px;
+
+}
+
+.screenshot-image-container img {
+	margin: auto;
+	width: auto;
+  height : auto;
+	max-height: 100%;
+	max-width: 100%;
+	vertical-align: middle;
+	display: none;
+}
+
+.screenshot-image-container img.visible{
+	display: block;
+}
+
+.direction {
+	position: absolute;
+	display: inline-block;
+	font-size: 72px;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.3);
+	color: #ddd;
+	cursor: pointer;
+}
+
+.direction-left {
+	top: 25%;
+	left: -70px;
+	border-radius: 5px 0 0 5px;
+	display: none;
+}
+
+.direction-right {
+	top: 25%;
+	right: -70px;
+	border-radius: 0 5px 5px 0;
+	display: none;
+}
+
+.direction-left.visible {
+	display: inline-block;
+}
+
+.direction-right.visible {
+	display: inline-block;
+}
+
+/* ---- Screnn Shot Style End --- */

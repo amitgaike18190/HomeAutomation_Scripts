@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<title>Report</title>
+<link rel="stylesheet" href="css/pure-min.css" />
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<link rel="stylesheet" href="css/chartist.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<div id="container" class="container">
+		<div id="dashboard-menu">
+			<div id="dashboard-menu-header"><h3>Orchestrator</h3></div>
+		</div>
+		<div id="content"></div>
+	</div>
+
+<!-- Templates -->
+		<script id="dashboard-menu-tmpl" type="x-tmpl-mustache">
+{{#.}}
+<li><span><i class="fa {{menuIcon}}"></i></span> <span>{{menuText}}</span><span class="arrow-left"></span></li>
+{{/.}}
+		</script>
+		<script id="summary-tmpl" type="x-tmpl-mustache">
+<div id="header"><h3>Summary</h3></div>
+<div id="summary-chart" class="widget">
+	{{> summaryChart}}
+</div>
+<div id="summary-scenarios" class="widget">
+	{{> summaryScenarios}}
+</div>
+		</script>
+		<script id="detailed-report-tmpl" type="x-tmpl-mustache">
+<div id="header"><h3>Detailed Report</h3></div>
+{{#.}}
+	<div class="widget detailed-scenarios">
+		<!-- <div class="header">
+				<span>{{scenarioName}}</span>
+		</div> -->
+		<div class="scenario-details">
+			{{>scenarioDetails}}
+		</div>
+		<div class="native-reports">
+			<span>Native Reports:</span>
+			{{#nativeReports}}
+				<a href="{{link}}">{{adapterName}}</a>
+			{{/nativeReports}}
+			{{^nativeReports}}
+				Not Available
+			{{/nativeReports}}
+		</div>
+	</div>
+{{/.}}
+		</script>
+    <script id="summary-chart-tmpl" type="x-tmpl-mustache">
+<div class="header">
+    {{#scenarioName}}
+        <span>{{scenarioName}}</span>
+    {{/scenarioName}}
+    {{^scenarioName}}
+        <span>All Scenarios</span>
+    {{/scenarioName}}
+</div>
+<div class="pure-g">
+		<div id="scenario-metrics-container" class="pure-u-1-2">
+		</div>
+		<div class="pure-u-1-2">
+		<div class="section-header"><h4>Test Steps</h4></div>
+	    <div id="overall-chart-container" class="ct-chart"></div>
+	    <div class="legend-container">
+	      <span><i class="fa fa-circle passed"></i> <span class="text">{{metrics.passed}} Passed</span></span>
+	      <span><i class="fa fa-circle failed"></i> <span class="text">{{metrics.failed}} Failed</span></span>
+	      <span><i class="fa fa-circle skipped"></i> <span class="text">{{metrics.skipped}} Skipped</span></span>
+	    </div>
+		</div>
+</div>
+<div class="section-header"><h4>Channels</h4></div>
+<div id="channel-chart-container"></div>
+    </script>
+    <script id="scenario-metrics-tmpl" type="x-tmpl-mustache">
+		<div class="section-header"><h4>Scenarios</h4></div>
+	    <div id="overall-scenario-metrics-chart-container" class="ct-chart"></div>
+	    <div class="legend-container">
+	      <span><i class="fa fa-circle passed"></i> <span class="text">{{metrics.passed}} Passed</span></span>
+	      <span><i class="fa fa-circle failed"></i> <span class="text">{{metrics.failed}} Failed</span></span>
+	      <span><i class="fa fa-circle skipped"></i> <span class="text">{{metrics.skipped}} Skipped</span></span>
+	    </div>
+	</script>
+    <script id="summary-scenarios-tmpl" type="x-tmpl-mustache">
+<div>
+    <table id="scenarios-table" class="scenarios pure-table">
+        <colgroup>
+            <col style="width: 40%">
+            <col style="width: 12%">
+            <col style="width: 12%">
+            <col style="width: 12%">
+            <col style="width: 12%">
+			<col style="width: 12%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Scenario</th>
+                <th class="scenario-metrics-cell">Passed</th>
+                <th class="scenario-metrics-cell">Failed</th>
+                <th class="scenario-metrics-cell">Skipped</th>
+                <th class="scenario-metrics-cell">Total</th>
+								<!-- <th class="scenario-metrics-cell">Duration</th> -->
+            </tr>
+        </thead>
+        <tbody id="scenarios-table-body">
+            {{#scenarios}}
+                <tr>
+                    <td>{{scenarioName}}</td>
+                    <td class="scenario-metrics-cell">{{metrics.passed}}</td>
+                    <td class="scenario-metrics-cell">{{metrics.failed}}</td>
+                    <td class="scenario-metrics-cell">{{metrics.skipped}}</td>
+                    <td class="scenario-metrics-cell">{{metrics.total}}</td>
+										<!-- <td class="scenario-metrics-cell">{{metrics.duration}}</td> -->
+                </tr>
+            {{/scenarios}}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th>{{metrics.passed}}</th>
+                <th>{{metrics.failed}}</th>
+                <th>{{metrics.skipped}}</th>
+                <th>{{metrics.total}}</th>
+								<!-- <th>{{metrics.duration}}</th> -->
+            </tr>
+        </tfoot>
+    </table>
+</div>
+    </script>
+    <script id="scenarios-tmpl" type="x-tmpl-mustache">
+<select>
+    {{#.}}
+    <option>{{scenarioName}}</option>
+    {{/.}}
+</select>
+    </script>
+    <script id="scenario-details-tmpl" type="x-tmpl-mustache">
+<div class="steps">
+    <table class="scenario-detail pure-table">
+    
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Action</th>
+                <th>Session</th>
+                <th>Description</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody class="results">
+        {{#testCases}}
+            <tr class="test-case">
+                <td colspan="5"></td><!--  {{testCaseName}} -->
+            </tr>
+            {{#steps}}
+            <tr>
+                <td>{{no}}</td>
+                <td  colspan="1">{{name}}</td>
+                <td colspan="1">{{session}}</td>
+				<td class="media-column" colspan="1">{{testCaseName}}</td>
+				 <td {{#stackTrace}} class="status-column" style="cursor: pointer;" {{/stackTrace}} colspan="1">
+                    <i class="{{statusIcon}}"></i> {{statusValue}}
+                </td>
+            </tr>
+            {{/steps}}
+        {{/testCases}}
+        </tbody>
+    </table>
+</div>
+  </script>
+	    <script id="stack-trace-tmpl" type="x-tmpl-mustache">
+{{#.}}
+	<h3 class='header'>{{testCaseName}} - {{name}}</h3>
+	<div class='exception-message'>
+	{{exceptionMessage}}
+	</div>
+	<div class='stack-trace'>
+		<pre>{{stackTrace}}</pre>
+	</div>
+{{/.}}
+			</script>
+			<script id="screenshots-tmpl" type="x-tmpl-mustache">
+	<div class="screenshot-inner-container">
+		<div id="screenshot-image-container" class="screenshot-image-container">
+			<div id="direction-left" class="direction direction-left"><i class="fa fa-angle-left"></i></div>
+				{{#.}}
+					<img src="{{.}}"/>
+				{{/.}}
+			<div id="direction-right" class="direction direction-right"><i class="fa fa-angle-right"></i></div>
+		</div>
+	</div>
+			</script>
+<!-- Templates End -->
+	<script type="text/javascript" src="js/stapes.min.js"></script>
+	<script type="text/javascript" src="js/mustache.js"></script>
+  <script type="text/javascript" src="js/chartist.js"></script>
+  <script type="text/javascript" src="js/test-report.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

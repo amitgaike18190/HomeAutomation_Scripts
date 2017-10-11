@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<Command>
+    <Record>
+    <CommandDetail>
+            <CommandType>cmd</CommandType>
+            <Session>s1</Session>
+            <Description>python POTA_LOGIN_TEST.py</Description>
+    </CommandDetail>
+    <CommandDetail>
+            <CommandType>cmd</CommandType>
+            <Session>s1</Session>
+            <Description>python POTA_PROBE_TEST.py</Description>
+    </CommandDetail>
+    </Record>
+</Command>

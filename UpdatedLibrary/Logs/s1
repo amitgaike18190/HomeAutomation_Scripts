@@ -1,0 +1,20 @@
+C:\Amit\ElectroluxSetup\TEST\UpdatedLibrary>python Homeautomation_Appium.py
+
+----Installing the Application on mobile device----
+
+C:\Amit\ElectroluxSetup\TEST\UpdatedLibrary>python Homeautomation_AWS_API.py
+27 Degree Celsius 61% HVAC Status ON
+{"state":{"desired":{"Temperature":"27","Humidity":"61","Switch":1},"delta":{"Temperature":"27","Humidity":"61","Switch":1}},"metadata":{"desired":{"Temperature":{"timestamp":1507209399},"Humidity":{"timestamp":1507209399},"Switch":{"timestamp":1507715198}}},"version":286,"timestamp":1507716080}
+Temperature = 27
+Humidity= 61
+Switch= 1
+Temperature value displayed is same on mobile app & AWS cloud
+Humidity value displayed is same on mobile app & AWS cloud
+HVAC status value displayed is same on mobile app & AWS cloud
+
+C:\Amit\ElectroluxSetup\TEST\UpdatedLibrary>python jiraisuuecreator.py
+
+C:\Amit\ElectroluxSetup\TEST\UpdatedLibrary>python Pota_orches.py "cd /home/pi/Desktop/New/AWS | sudo python3 DeviceComp.py"
+PDC2LAP-6196C3L
+
+C:\Amit\ElectroluxSetup\TEST\UpdatedLibrary>

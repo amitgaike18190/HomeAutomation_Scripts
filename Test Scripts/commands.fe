@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<im:InvoiceBook xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:im="http://invoicemodel/1.0">
+  <invoices invoiceno="IIOT_Voltage">
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="cd C:\Users\akshatha.as\Desktop\Industrial_automation\Bangalore\SCRIPTS\VOLTAGE_END2END"/>
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="python OpcUA_Voltage.py"/>
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="python TestScript_OM2M_Voltage.py"/>
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="python Dashboard_Voltage.py"/>
+  </invoices>
+  <invoices invoiceno="IIOT_Heater">
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="cd C:\Users\akshatha.as\Desktop\Industrial_automation\Bangalore\SCRIPTS\Heater"/>
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="python Heater_OM2M.py"/>
+  </invoices>
+  <invoices invoiceno="IIOT_OutputSwitches">
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="cd C:\Users\akshatha.as\Desktop\Industrial_automation\Bangalore\SCRIPTS\Output_Switches"/>
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="python OpcUA_OutputSwitches.py"/>
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="python TestScript_OM2M.py"/>
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="python Dashboard.py"/>
+  </invoices>
+  <invoices invoiceno="Jenkins">
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="dir"/>
+    <items commandname="ssh" sessioninfo="s1" descriptioninfo="ls"/>
+  </invoices>
+  <invoices invoiceno="Selenium">
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="C:\IOT\eclipse\Kohls_WebScripts\src\com\desktop\TestScript.java"/>
+  </invoices>
+  <invoices invoiceno="GOOGLE_NESt">
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="cd C:\Users\akshatha.as\Desktop\Google_Nest"/>
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="python homeautomation.py"/>
+    <items commandname="cmd" sessioninfo="s1" descriptioninfo="python AWS_TestScript.py"/>
+  </invoices>
+</im:InvoiceBook>
