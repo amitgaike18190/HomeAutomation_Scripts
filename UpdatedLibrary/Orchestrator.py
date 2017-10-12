@@ -122,9 +122,9 @@ def execution():
 
     d.final_update()
     time.sleep(10)
-    #webbrowser.open(html_path)
-    ie_path= r"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe %s"
-    webbrowser.get(ie_path).open(html_path)        
+    webbrowser.open(html_path)
+    #ie_path= r"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe %s"
+    #webbrowser.get(ie_path).open(html_path)        
     time.sleep(2)
     jira_file()
     

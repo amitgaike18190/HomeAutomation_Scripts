@@ -10,13 +10,13 @@
             <CommandType>ssh</CommandType>
             <Session>s1</Session>
             <Description>sudo ./Run.sh</Description>
-    </CommandDetail>-->
-    <CommandDetail>
+    </CommandDetail>
+   <CommandDetail>
             <CommandType>cmd</CommandType>
             <Session>s1</Session>
             <Description>python Homeautomation_Appium.py</Description>
     </CommandDetail>
-    <!--<CommandDetail>
+    <CommandDetail>
             <CommandType>cmd</CommandType>
             <Session>s1</Session>
             <Description>python Homeautomation_AWS.py</Description>
@@ -26,23 +26,13 @@
             <Session>s1</Session>
             <Description>python Homeautomation_AWS_API.py</Description>
     </CommandDetail>
-	<CommandDetail>
+	<!--<CommandDetail>
             <CommandType>cmd</CommandType>
             <Session>s1</Session>
             <Description>python Pota_orches.py sudo python3 DeviceComp.py</Description>
-    </CommandDetail> 
+    </CommandDetail> -->
  
 
-	
-    <!--<CommandDetail>
-            <CommandType>cmd</CommandType>
-            <Session>s1</Session>
-            <Description>python C:\\Users\\deepthi.a.desai\\Desktop\\jira_issue_creator.py</Description>
-    </CommandDetail>
-    <CommandDetail>
-            <CommandType>ssh</CommandType>
-            <Session>s1</Session>
-            <Description>sudo python3 //home//pi//Desktop//New//AWS//DeviceComp.py</Description>
-    </CommandDetail>-->
+
     </Record>
 </Command>
