@@ -10,7 +10,7 @@
             <CommandType>ssh</CommandType>
             <Session>s1</Session>
             <Description>sudo ./Run.sh</Description>
-    </CommandDetail>
+    </CommandDetail>-->
    <CommandDetail>
             <CommandType>cmd</CommandType>
             <Session>s1</Session>
@@ -20,7 +20,7 @@
             <CommandType>cmd</CommandType>
             <Session>s1</Session>
             <Description>python Homeautomation_AWS.py</Description>
-    </CommandDetail>-->
+    </CommandDetail>
 	<CommandDetail>
             <CommandType>cmd</CommandType>
             <Session>s1</Session>
