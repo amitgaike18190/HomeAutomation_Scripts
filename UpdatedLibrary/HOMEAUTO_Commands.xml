@@ -16,21 +16,16 @@
             <Session>s1</Session>
             <Description>python Homeautomation_Appium.py</Description>
     </CommandDetail>
-    <CommandDetail>
-            <CommandType>cmd</CommandType>
-            <Session>s1</Session>
-            <Description>python Homeautomation_AWS.py</Description>
-    </CommandDetail>
 	<CommandDetail>
             <CommandType>cmd</CommandType>
             <Session>s1</Session>
             <Description>python Homeautomation_AWS_API.py</Description>
     </CommandDetail>
-	<!--<CommandDetail>
+	<CommandDetail>
             <CommandType>cmd</CommandType>
             <Session>s1</Session>
             <Description>python Pota_orches.py sudo python3 DeviceComp.py</Description>
-    </CommandDetail> -->
+    </CommandDetail> 
  
 
 
