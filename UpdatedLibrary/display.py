@@ -52,7 +52,7 @@ def update_jsfile(cmd, count,step, cmd_type, cmd_dict_1, cmd_status_1,svalue,ses
             "statusIcon" : "%s",
             "session" : " %s "
           } ]
-        },"""%(cmd, num,step,cmd_type,(((str(cmd_dict_1).strip('[]')).replace('"',''))).replace('\\',''), cmd_status_1,svalue,session_name)
+        },"""%(cmd, num,step,cmd_type,(((str(cmd_dict_1).strip('[]')).replace('"',''))).replace('\\x',''), cmd_status_1,svalue,session_name)
 
         with open(test_report_js, "a+") as newJSFile:
             newJSFile.write(valueJsChange)
