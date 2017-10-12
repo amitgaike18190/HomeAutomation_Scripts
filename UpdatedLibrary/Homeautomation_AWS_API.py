@@ -43,7 +43,7 @@ class cpaas_pyTest(unittest.TestCase):
         else:
             print("Error : HVAC status value displayed is not same on mobile app & AWS cloud")        
             
-        time.sleep(2)
+        '''time.sleep(2)
         file1 = r"/home/pi/Desktop/New/AWS/write_to_pi.py"
         sshitem = "python "+file1+" "+mtemperature[0:2]+" "+mHumidity[0:2]+" "+str(aws_swt)
         abc = [r"C:\Users\deepthi.a.desai\Desktop\Backup\EclipseMars\Putty\PLINK.EXE", "-ssh", "pi@192.168.1.245", "-pw", "raspberry"]
@@ -55,6 +55,6 @@ class cpaas_pyTest(unittest.TestCase):
         ss.stdin.flush()
         time.sleep(4)
         ss.stdin.write(bytes("\nexit\n", "ascii"))
-        (output, err) = ss.communicate()
+        (output, err) = ss.communicate()'''
 if __name__ == "__main__":
     unittest.main()
