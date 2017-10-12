@@ -29,12 +29,7 @@
 	<CommandDetail>
             <CommandType>cmd</CommandType>
             <Session>s1</Session>
-            <Description>python jiraisuuecreator121253.py</Description>
-    </CommandDetail>
-	<CommandDetail>
-            <CommandType>cmd</CommandType>
-            <Session>s1</Session>
-            <Description>python Pota_orches.py "cd /home/pi/Desktop/New/AWS | sudo python3 DeviceComp.py"</Description>
+            <Description>python Pota_orches.py sudo python3 DeviceComp.py</Description>
     </CommandDetail> 
  
 
