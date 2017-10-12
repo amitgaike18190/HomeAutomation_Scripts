@@ -122,7 +122,9 @@ def execution():
 
     d.final_update()
     time.sleep(10)
-    webbrowser.open(html_path)
+    #webbrowser.open(html_path)
+    os.startfile(html_path) 
+        
     time.sleep(2)
     jira_file()
     
