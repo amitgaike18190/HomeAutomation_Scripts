@@ -1,20 +1,27 @@
-<testsuite tests="1"><testcase classname=" python Homeautomation_AWS_API.py " name="python Homeautomation_AWS_API.py"><failure type="NA">'C:\AmitScriptsGitRepo\HomeAutomation_Scripts\UpdatedLibrary&gt;python Homeautomation_AWS_API.py
-', '27 Degree Celsius 61% HVAC Status ON
+<testsuite tests="1"><testcase classname=" python Pota_orches.py sudo python3 DeviceComp.py " name="python Pota_orches.py sudo python3 DeviceComp.py"><failure type="NA">'  File Pota_orches.py, line 36, in &lt;module&gt;
 ', '
-', '{state:{desired:{Temperature:25,Humidity:59,Switch:1},delta:{Temperature:25,Humidity:59,Switch:1}},metadata:{desired:{Temperature:{timestamp:1507802029},Humidity:{timestamp:1507802029},Switch:{timestamp:1507811970}}},version:314,timestamp:1507812318}
+', '    main()
 ', '
-', 'Temperature = 25
+', '  File Pota_orches.py, line 27, in main
 ', '
-', 'Humidity= 59
+', '    client.connect(34.207.194.93, 443)
 ', '
-', 'Switch= 1
+', '  File C:\Program Files\Python35\lib\site-packages\paho\mqtt\client.py, line 686, in connect
 ', '
-', ' error: Temperature value displayed is not same on mobile app &amp; AWS cloud
+', '    return self.reconnect()
 ', '
-', 'Error : Humidity value displayed is not same on mobile app &amp; AWS cloud
+', '  File C:\Program Files\Python35\lib\site-packages\paho\mqtt\client.py, line 808, in reconnect
 ', '
-', 'HVAC status value displayed is same on mobile app &amp; AWS cloud
+', '    sock = socket.create_connection((self._host, self._port), source_address=(self._bind_address, 0))
 ', '
+', '  File C:\Program Files\Python35\lib\socket.py, line 711, in create_connection
 ', '
+', '    raise err
+', '
+', '  File C:\Program Files\Python35\lib\socket.py, line 702, in create_connection
+', '
+', '    sock.connect(sa)
+', '
+', 'ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
 ', '
 '</failure></testcase></testsuite>
