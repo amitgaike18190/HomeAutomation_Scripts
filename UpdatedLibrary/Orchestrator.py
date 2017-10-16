@@ -31,6 +31,7 @@ logging.basicConfig(level=logging.DEBUG, format='(%(threadName)-10s %(message)s 
 html_path = os.path.join(r'file://',current,'index.html')
 #**************************** execution() *************************************#
 def jira_file():
+        timestr = time.strftime("%Y%m%d_%H%M%S") 
         current = os.getcwd()
         test_report_js = os.path.join(r'',current,'js','test-report.js')
 
@@ -52,7 +53,7 @@ def jira_file():
                 if (testCase['steps'][0]['statusValue']).strip() == "Failed":
                         failed_test_count+=1
                         print(testCase['testCaseName'])
-                        testcase = SubElement(testsuite, 'testcase', {'classname':testCase['steps'][0]['testClassName'], 'name':testCase['testCaseName']})
+                        testcase = SubElement(testsuite, 'testcase', {'classname':str(timestr)+str(testCase['steps'][0]['testClassName']), 'name':str(timestr)+str(testCase['testCaseName'])})
                         
                         failure = SubElement(testcase,'failure',  {'type':"NA"})
                         failure.text = testCase['steps'][0]['stackTrace']
