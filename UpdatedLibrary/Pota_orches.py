@@ -24,7 +24,7 @@ def main():
 
  client = paho.Client()
  client.on_connect = on_connect
- client.connect("34.207.194.93", 443)
+ client.connect("52.10.165.197", 8181)
  client.subscribe("PIBANG01/orchestrator/output",qos=1)
  #client.on_subscribe = on_subscribe
  client.on_message = on_message
