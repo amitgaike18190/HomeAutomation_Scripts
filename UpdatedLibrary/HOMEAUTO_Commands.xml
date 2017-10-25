@@ -10,12 +10,7 @@
             <CommandType>ssh</CommandType>
             <Session>s1</Session>
             <Description>sudo ./Run.sh</Description>
-    </CommandDetail>-->
-	<CommandDetail>
-            <CommandType>cmd</CommandType>
-            <Session>s1</Session>
-            <Description>python jiraissuecreator121253.py</Description>
-    </CommandDetail> 
+    </CommandDetail>--> 
    <CommandDetail>
             <CommandType>cmd</CommandType>
             <Session>s1</Session>
