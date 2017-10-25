@@ -87,6 +87,18 @@ class AndroidTests(unittest.TestCase):
         print("Temperature value displayed on mobile application :" +temperature)
         print("Humidity value displayed on mobile application :" +Humidity)
         print("HVAC status on mobile application:"+status)
+
+        
+        if (int(temperature[0:2]) > threshold):
+            if status == "HVAC Status ON":
+                pass
+            else :
+                print("error: Application is not working as expected")
+        if (int(temperature[0:2]) < threshold):
+            if status == "HVAC Status OFF":
+                pass
+            else :
+                print("error: Application is not working as expected") 
         
         time.sleep(2)
         file1 = open("Mobile_TempHumid.txt", "wb")
